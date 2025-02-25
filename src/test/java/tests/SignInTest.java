@@ -1,9 +1,9 @@
 package tests;
 
 import base.BaseTest;
-import base.HomePage;
-import base.SignInPage;
+import pages.HomePage;
 import pages.LandingPage;
+import pages.SignInPage;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
