@@ -17,20 +17,20 @@ public class HomePage extends BasePage {
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
 	}
-	
+
 	@AndroidFindBy(id = "logo_view_base_image")
 	WebElement logoImage;
-	
+
 	@AndroidFindBy(id = "logo_view_partner_image")
 	WebElement partnerImage;
-	
+
 	@AndroidFindBy(className = "android.widget.ImageButton")
 	WebElement hamburgerButton;
-	
+
 	public void tapHamburgerButton() {
 		hamburgerButton.click();
 	}
-	
+
 	public void viewHomeLogos() {
 		Assert.assertTrue(logoImage.isDisplayed());
 		Assert.assertTrue(partnerImage.isDisplayed());

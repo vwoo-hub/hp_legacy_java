@@ -10,21 +10,21 @@ import io.appium.java_client.AppiumDriver;
 
 public class BaseTest {
 	protected AppiumDriver driver;
-	
+
 	@BeforeClass
 	public void setUp() {
 		try {
 			DriverManager.startDriver();
-			driver = DriverManager.getDriver(); 
+			driver = DriverManager.getDriver();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-    @AfterClass
-    public void tearDown() {
-        DriverManager.stopDriver();
-    }
-	
+
+	@AfterClass
+	public void tearDown() {
+		DriverManager.stopDriver();
+	}
+
 }
