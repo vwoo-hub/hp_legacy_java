@@ -23,12 +23,14 @@ public class SignInTest extends BaseTest {
 
 	@Test
 	public void whenValidCredentialsThenLogInSuccessfully() throws InterruptedException {
+		landingPage.waitForPage(5);
 		landingPage.tapLogInButton();
 
+		signInPage.waitForPage(5);
 		signInPage.typeEmailTextField("vwoo+hp@plume.com");
 		signInPage.typePasswordTextField("plumewifi1");
 		signInPage.tapNextButton();
 
-		homePage.viewHomeLogos();
+		homePage.waitForPage(5);
 	}
 }

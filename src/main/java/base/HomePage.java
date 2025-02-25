@@ -1,6 +1,7 @@
 package base;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -12,12 +13,6 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class HomePage extends BasePage {
 
-	public HomePage(AppiumDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
-	}
-
 	@AndroidFindBy(id = "logo_view_base_image")
 	WebElement logoImage;
 
@@ -26,6 +21,14 @@ public class HomePage extends BasePage {
 
 	@AndroidFindBy(className = "android.widget.ImageButton")
 	WebElement hamburgerButton;
+
+	public HomePage(AppiumDriver driver) {
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
+
+		this.initialViews = Arrays.asList(logoImage, partnerImage, hamburgerButton);
+	}
 
 	public void tapHamburgerButton() {
 		hamburgerButton.click();

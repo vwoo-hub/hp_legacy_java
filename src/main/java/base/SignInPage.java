@@ -1,6 +1,7 @@
 package base;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,12 +12,6 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SignInPage extends BasePage {
 
-	public SignInPage(AppiumDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
-	}
-
 	@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Email\")")
 	private WebElement emailTextField;
 
@@ -25,6 +20,14 @@ public class SignInPage extends BasePage {
 
 	@AndroidFindBy(id = "next_button")
 	private WebElement nextButton;
+
+	public SignInPage(AppiumDriver driver) {
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
+
+		this.initialViews = Arrays.asList(emailTextField, passwordTextField, nextButton);
+	}
 
 	public void typeEmailTextField(String email) {
 		emailTextField.sendKeys(email);
@@ -36,6 +39,5 @@ public class SignInPage extends BasePage {
 
 	public void tapNextButton() {
 		nextButton.click();
-
 	}
 }
