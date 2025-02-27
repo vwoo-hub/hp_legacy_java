@@ -15,10 +15,15 @@ public class BasePage {
 
 	protected AppiumDriver driver;
 	protected List<WebElement> initialViews;
+	public static final int DEFAULT_TIMEOUT = 5;
 
 	public BasePage(AppiumDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), driver);
+	}
+	
+	public void waitForPage() {
+		waitForPage(DEFAULT_TIMEOUT);
 	}
 
 	public void waitForPage(int timeout) {

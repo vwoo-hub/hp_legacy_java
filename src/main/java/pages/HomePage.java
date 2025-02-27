@@ -34,9 +34,4 @@ public class HomePage extends BasePage {
 	public void tapHamburgerButton() {
 		hamburgerButton.click();
 	}
-
-	public void viewHomeLogos() {
-		Assert.assertTrue(logoImage.isDisplayed());
-		Assert.assertTrue(partnerImage.isDisplayed());
-	}
 }

@@ -34,5 +34,4 @@ public class LandingPage extends BasePage {
 	public void tapSetUpPlumeButton() {
 		setUpPlumeButton.click();
 	}
-
 }
