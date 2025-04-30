@@ -1,4 +1,4 @@
-# Selenium automation framework for hp_legacy
+# Appium automation framework for hp_legacy
 
 A Selenium automation framework for the SauceDemo website that uses TestNG.
 
